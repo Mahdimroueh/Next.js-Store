@@ -4,7 +4,7 @@ import React from "react";
 const ProductPage = async ({
   searchParams,
 }: {
-  searchParams: { layout?: string; search?: string };
+  searchParams: Promise<{ layout?: string; search?: string }>;
 }) => {
   const params = await searchParams;
 

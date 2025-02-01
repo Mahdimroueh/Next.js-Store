@@ -14,7 +14,8 @@ const SingleProductPage = async ({
 }) => {
   const { id } = await params;
   const product = await fetchSingleProduct(id);
-  console.log(id);
+  
+  
   const { name, image, company, description, price } = product;
 
   const dollarsAmount = formatCurrency(price);
