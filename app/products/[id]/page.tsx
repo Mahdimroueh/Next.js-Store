@@ -7,7 +7,7 @@ import { formatCurrency } from "@/utils/format";
 import Image from "next/image";
 import React from "react";
 
-const SingleProductPage = async ({ params }: { params: { id: string } }) => {
+const SingleProductPage = async (params: { id: string }) => {
   const product = await fetchSingleProduct(params.id);
 
   const { name, image, company, description, price } = product;
