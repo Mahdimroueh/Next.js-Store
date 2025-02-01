@@ -8,8 +8,8 @@ const ProductPage = async ({
 }) => {
   const params = await searchParams;
 
-  const layout = searchParams.layout || "grid";
-  const search = searchParams.search || "";
+  const layout = params.layout || "grid";
+  const search = params.search || "";
 
   return <ProductsContainer layout={layout} search={search} />;
 };
