@@ -7,9 +7,14 @@ import { formatCurrency } from "@/utils/format";
 import Image from "next/image";
 import React from "react";
 
-const SingleProductPage = async (params: { id: string }) => {
-  const product = await fetchSingleProduct(params.id);
-
+const SingleProductPage = async ({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) => {
+  const { id } = await params;
+  const product = await fetchSingleProduct(id);
+  console.log(id);
   const { name, image, company, description, price } = product;
 
   const dollarsAmount = formatCurrency(price);
@@ -30,15 +35,15 @@ const SingleProductPage = async (params: { id: string }) => {
         <div>
           <div className="flex gap-x-8 items-center">
             <h1 className="capitalize text-3xl font-bold">{name}</h1>
-            <FavoriteToggleButton productId={params.id} />
+            <FavoriteToggleButton productId={id} />
           </div>
-          <ProductRating productId={params.id} />
+          <ProductRating productId={id} />
           <h4 className="text-xl mt-2">{company}</h4>
           <p className="mt-3 text-sm bg-muted inline-block p-2 rounded">
             {dollarsAmount}
           </p>
           <p className="mt-6 leading-8 text-muted-foreground">{description}</p>
-          <AddToCart productId={params.id} />
+          <AddToCart productId={id} />
         </div>
       </div>
     </section>
