@@ -1,6 +1,7 @@
 import { FaHeart } from "react-icons/fa";
 import { Button } from "../ui/button";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const FavoriteToggleButton = ({ productId }: { productId: string }) => {
   
   return (
