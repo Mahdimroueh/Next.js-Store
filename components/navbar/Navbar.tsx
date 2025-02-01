@@ -18,6 +18,7 @@ const Navbar = () => {
           <CartButton />
           <DarkMode />
           <LinkDropdown />
+     
         </div>
       </Container>
     </nav>

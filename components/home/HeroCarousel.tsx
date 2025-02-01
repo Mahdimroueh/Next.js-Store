@@ -16,7 +16,7 @@ const carouselImages = [hero1, hero2, hero3, hero4];
 
 const HeroCarousel = () => {
   return (
-    <div className="hidden lg:block -z-10">
+    <div className="hidden lg:block">
       <Carousel>
         <CarouselContent>
           {carouselImages.map((img, i) => (
